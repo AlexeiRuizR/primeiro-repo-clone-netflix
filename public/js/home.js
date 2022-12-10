@@ -10,6 +10,7 @@ fetch(
       fetchMoviesListByGenres(item.id, item.name);
     });
   });
+const main = document.querySelector(".main");
 const fetchMoviesListByGenres = (id, genres) => {
   fetch(
     movie_genres_http +
@@ -25,7 +26,7 @@ const fetchMoviesListByGenres = (id, genres) => {
     })
     .catch((err) => console.log(err));
 };
-const main = document.querySelector(".main");
+
 const makeCategoryElement = (category, data) => {
   main.innerHTML += `
   <div class="movie-list">
@@ -41,4 +42,28 @@ const makeCategoryElement = (category, data) => {
       </button>
     </div>
   `;
+  makeCards(category, data);
+};
+const makeCards = (id, data) => {
+  const movieContainer = document.getElementById(id);
+
+  data.forEach((item, i) => {
+    if (item.backdrop_path == null) {
+      item.backdrop_path = item.poster_path;
+      if (item.backdrop_path == null) {
+        return;
+      }
+    }
+    movieContainer.innerHTML += `
+    <div class="movie">
+          <img src="${img_url}${item.backdrop_path} " alt="poster">
+          <p class="movie-title">${item.title} </p>
+        </div>
+    `;
+    if ((i = data.lenght - 1)) {
+      setTimeout(() => {
+        setupScrolling();
+      }, 100);
+    }
+  });
 };
