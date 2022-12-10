@@ -1,0 +1,23 @@
+{
+  "name": "primeiro-repo-clone-netflix",
+  "version": "1.0.0",
+  "description": "Repositório criado para o **Desafio de Projeto** e Construindo um Clone Responsivo do Netflix - **Felipe Aguiar**",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexeiRuizR/primeiro-repo-clone-netflix.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlexeiRuizR/primeiro-repo-clone-netflix/issues"
+  },
+  "homepage": "https://github.com/AlexeiRuizR/primeiro-repo-clone-netflix#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
